@@ -4,6 +4,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 .companies {
     font-size: 200%;
@@ -22,12 +23,11 @@ body {
     vertical-align:middle;
     float: left;
     clear:both;
-    // font-family: "Times New Roman", Times, serif;
 }
 
 .form-inline {
-    //float: left;
-    //clear:both;
+    float: left;
+    clear:both;
     min-width: 720px;  
 }
 
