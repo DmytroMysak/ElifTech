@@ -17,8 +17,9 @@ window.onload = function () {
         var temp1 = document.createElement('img');
         temp1.setAttribute("class", 'img-2');
         temp1.setAttribute("src", 'img/add-7.svg');
-        //document.getElementById("-1").innerHTML = '<i class="glyphicon glyphicon-plus"/>'; 
-        document.getElementById("-1").appendChild(temp1);
+        var mainAdd = document.getElementById("-1");
+        mainAdd.removeChild(mainAdd.firstChild);
+        mainAdd.appendChild(temp1);
     });
 };
 
@@ -227,7 +228,7 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     span2.appendChild(button1);
     var temp1 = document.createElement('img');
     temp1.setAttribute("class", 'img');
-    temp1.setAttribute("src", 'img/add-7.svg');
+    temp1.setAttribute("src", 'img/add-8.svg');
     button1.appendChild(temp1);
 
     var button2 = document.createElement('button');
@@ -241,7 +242,7 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     span2.appendChild(button2);
     var temp2 = document.createElement('img');
     temp2.setAttribute("class", 'img');
-    temp2.setAttribute("src", 'img/edit-3.svg');
+    temp2.setAttribute("src", 'img/edit-4.svg');
     button2.appendChild(temp2);
 
     var button3 = document.createElement('button');
@@ -254,6 +255,6 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     span2.appendChild(button3);
     var temp3 = document.createElement('img');
     temp3.setAttribute("class", 'img');
-    temp3.setAttribute("src", 'img/del-3.svg');
+    temp3.setAttribute("src", 'img/del-4.svg');
     button3.appendChild(temp3);
 };
