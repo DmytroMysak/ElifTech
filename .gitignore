@@ -239,10 +239,4 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
-# JetBrains Rider
-.idea/
-*.sln.iml
-/Project - Unit 1/.ProjectUnit1.boltdata
-/Project - Unit 1/.sonar
-/Project - Unit 1/.sonarqube
-/FrontEnd/
+
