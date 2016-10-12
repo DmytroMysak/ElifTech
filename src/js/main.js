@@ -111,23 +111,14 @@ var DeleteIF = function() {
 }
 
 var CreateIF = function(id, addOrEdit) {
-    var inputForm = document.getElementById("inputForm");
-    if(inputForm)
-        DeleteIF();
+    if(document.getElementById("inputForm")) DeleteIF();
     
     var element = document.createElement('form');
     element.setAttribute("id", "inputForm");   
     element.setAttribute("class", "form-inline");
     element.setAttribute("role", 'form');
     
-    if(id == -1) {
-        var mainDiv = document.getElementById("companies");
-        mainDiv.insertBefore(element, mainDiv.firstChild);  
-    }
-    else {
-        var mainCompany = document.getElementById("nodes-" + id);
-        mainCompany.appendChild(element);
-    }
+    document.getElementById((parentId == -1) ? "companies" : ("nodes-" + id)).appendChild(element);   
 
     var node1 = document.createElement('label'); 
     node1.setAttribute("for", "name");
@@ -175,14 +166,7 @@ var CreateCompany = function(id, name, price, parentId, allPrice) {
     element.setAttribute("id", id);   
     element.setAttribute("class", "company");          
 
-    if(parentId == -1) {
-        var mainDiv = document.getElementById("companies");
-        mainDiv.appendChild(element);        
-    }
-    else {
-        var parentCompany = document.getElementById("nodes-" + parentId);
-        parentCompany.appendChild(element);
-    }
+    document.getElementById((parentId == -1) ? "companies" : ("nodes-" + parentId)).appendChild(element);         
 
     var b1 = document.createElement('b'); 
     b1.setAttribute("id", id);
