@@ -47,9 +47,11 @@ body {
 }
 
 .btn-default {
-    background: /*#CEE8F0;*/ #93C5F5;
+    background:#93C5F5;
     display: inline-block;
     margin: 2px;
+    border-radius: 15px;
+    border-color: #283642;
 }
 
 .btn-circle.btn-xl {
