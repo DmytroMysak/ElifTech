@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
 window.onload = function LoadFromDb() {
     $.ajax({
             type: 'GET',
@@ -174,11 +178,13 @@ var CreateCompany = function(id, name, price, parentId, allPrice) {
         var parentCompany = document.getElementById("nodes-" + parentId);
         parentCompany.appendChild(element);
     }
-    
+    //  data-toggle="tooltip" title="Hooray!"
     var b1 = document.createElement('b'); 
     b1.setAttribute("id", id);
     b1.setAttribute("name", id);
     b1.setAttribute("class", "name");
+    b1.setAttribute("data-toggle", 'tooltip');
+    b1.setAttribute("title", 'Name');
     b1.innerHTML = name;
     element.appendChild(b1);
     
