@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({ delay: { show: 0, hide: 1000 } });
 });
 
 window.onload = function LoadFromDb() {
@@ -176,7 +176,7 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
         var parentCompany = document.getElementById("nodes-" + parentId);
         parentCompany.appendChild(element);
     }
-    //  data-toggle="tooltip" title="Hooray!"
+
     var b1 = document.createElement('b');
     b1.setAttribute("id", id);
     b1.setAttribute("name", id);
@@ -190,6 +190,8 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     b2.setAttribute("id", id);
     b2.setAttribute("name", id);
     b2.setAttribute("class", "price");
+    b2.setAttribute("data-toggle", 'tooltip');
+    b2.setAttribute("title", 'Price');
     b2.innerHTML = price;
     element.appendChild(b2);
 
@@ -197,6 +199,8 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     b3.setAttribute("id", id);
     b3.setAttribute("name", id);
     b3.setAttribute("class", "allPrice");
+    b3.setAttribute("data-toggle", 'tooltip');
+    b3.setAttribute("title", 'All price');
     b3.innerHTML = allPrice === undefined ? price : allPrice;
     element.appendChild(b3);
 
