@@ -122,7 +122,7 @@ var CreateIF = function(id, addOrEdit) {
 
     var node1 = document.createElement('label'); 
     node1.setAttribute("for", "name");
-    node1.innerHTML = "Company name";
+    node1.innerHTML = "Name";
     element.appendChild(node1);
     
     var node2 = document.createElement('input');
@@ -141,7 +141,7 @@ var CreateIF = function(id, addOrEdit) {
     node4.setAttribute("id", "price");
     node4.setAttribute("type", "text");
     node4.setAttribute("class", "form-control");
-    node4.setAttribute("placeholder", "money");    
+    node4.setAttribute("placeholder", "price");    
     element.appendChild(node4);
     
     var node5 = document.createElement('button');
@@ -209,11 +209,10 @@ var CreateCompany = function(id, name, price, parentId, allPrice) {
     button1.setAttribute("type", "button");
     button1.setAttribute("id", id);
     button1.setAttribute("class", "btn btn-default btn-xs");
-    button1.setAttribute("aria-label", "Right Align");  
-    button1.setAttribute("onclick", "CreateIF(this.id, \"edit\")");    
+    button1.setAttribute("onclick", "CreateIF(this.id)");    
     span2.appendChild(button1);
     var glyphicon1 = document.createElement('span');
-    glyphicon1.setAttribute("class", "glyphicon glyphicon-pencil");
+    glyphicon1.setAttribute("class", "glyphicon glyphicon-plus");
     glyphicon1.setAttribute("aria-hidden", "true");     
     button1.appendChild(glyphicon1);
     
@@ -221,13 +220,14 @@ var CreateCompany = function(id, name, price, parentId, allPrice) {
     button2.setAttribute("type", "button");
     button2.setAttribute("id", id);
     button2.setAttribute("class", "btn btn-default btn-xs");
-    button2.setAttribute("onclick", "CreateIF(this.id)");    
+    button2.setAttribute("aria-label", "Right Align");  
+    button2.setAttribute("onclick", "CreateIF(this.id, \"edit\")");    
     span2.appendChild(button2);
     var glyphicon2 = document.createElement('span');
-    glyphicon2.setAttribute("class", "glyphicon glyphicon-plus");
+    glyphicon2.setAttribute("class", "glyphicon glyphicon-pencil");
     glyphicon2.setAttribute("aria-hidden", "true");     
     button2.appendChild(glyphicon2);
-    
+ 
     var button3 = document.createElement('button');
     button3.setAttribute("type", "button");
     button3.setAttribute("id", id);
