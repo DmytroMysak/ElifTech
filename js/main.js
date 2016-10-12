@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({ delay: { show: 0, hide: 1000 } });
 });
 
-window.onload = function LoadFromDb() {
+window.onload = function () {
     $.ajax({
         type: 'GET',
         contentType: 'application/json',
@@ -14,7 +14,11 @@ window.onload = function LoadFromDb() {
             CreateCompany(data[i].id, data[i].name, data[i].price, data[i].parentId);
             PricePlusSubPrice(data[i].id);
         }
-        document.getElementById("-1").innerHTML = '<i class="glyphicon glyphicon-plus"/>';
+        var temp1 = document.createElement('img');
+        temp1.setAttribute("class", 'img-2');
+        temp1.setAttribute("src", 'img/add-7.svg');
+        //document.getElementById("-1").innerHTML = '<i class="glyphicon glyphicon-plus"/>'; 
+        document.getElementById("-1").appendChild(temp1);
     });
 };
 
@@ -108,7 +112,7 @@ var DeleteIF = function DeleteIF() {
 
 var CreateIF = function CreateIF(id, addOrEdit) {
     var inputForm = document.getElementById("inputForm");
-    if (inputForm) return;
+    if (inputForm) DeleteIF();
 
     var element = document.createElement('form');
     element.setAttribute("id", "inputForm");
@@ -216,34 +220,40 @@ var CreateCompany = function CreateCompany(id, name, price, parentId, allPrice) 
     var button1 = document.createElement('button');
     button1.setAttribute("type", "button");
     button1.setAttribute("id", id);
+    b3.setAttribute("data-toggle", 'tooltip');
+    b3.setAttribute("title", 'Add company');
     button1.setAttribute("class", "btn btn-default btn-xs");
     button1.setAttribute("onclick", "CreateIF(this.id)");
     span2.appendChild(button1);
-    var glyphicon1 = document.createElement('span');
-    glyphicon1.setAttribute("class", "glyphicon glyphicon-plus");
-    glyphicon1.setAttribute("aria-hidden", "true");
-    button1.appendChild(glyphicon1);
+    var temp1 = document.createElement('img');
+    temp1.setAttribute("class", 'img');
+    temp1.setAttribute("src", 'img/add-7.svg');
+    button1.appendChild(temp1);
 
     var button2 = document.createElement('button');
     button2.setAttribute("type", "button");
     button2.setAttribute("id", id);
+    b3.setAttribute("data-toggle", 'tooltip');
+    b3.setAttribute("title", 'Edit company');
     button2.setAttribute("class", "btn btn-default btn-xs");
     button2.setAttribute("aria-label", "Right Align");
     button2.setAttribute("onclick", "CreateIF(this.id, \"edit\")");
     span2.appendChild(button2);
-    var glyphicon2 = document.createElement('span');
-    glyphicon2.setAttribute("class", "glyphicon glyphicon-pencil");
-    glyphicon2.setAttribute("aria-hidden", "true");
-    button2.appendChild(glyphicon2);
+    var temp2 = document.createElement('img');
+    temp2.setAttribute("class", 'img');
+    temp2.setAttribute("src", 'img/edit-3.svg');
+    button2.appendChild(temp2);
 
     var button3 = document.createElement('button');
     button3.setAttribute("type", "button");
     button3.setAttribute("id", id);
+    b3.setAttribute("data-toggle", 'tooltip');
+    b3.setAttribute("title", 'Delete price');
     button3.setAttribute("class", "btn btn-default btn-xs");
     button3.setAttribute("onclick", "DeleteCompany(this.id)");
     span2.appendChild(button3);
-    var glyphicon3 = document.createElement('span');
-    glyphicon3.setAttribute("class", "glyphicon glyphicon-trash");
-    glyphicon3.setAttribute("aria-hidden", "true");
-    button3.appendChild(glyphicon3);
+    var temp3 = document.createElement('img');
+    temp3.setAttribute("class", 'img');
+    temp3.setAttribute("src", 'img/del-3.svg');
+    button3.appendChild(temp3);
 };
