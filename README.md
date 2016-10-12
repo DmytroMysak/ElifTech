@@ -18,7 +18,7 @@ Name | Company Estimated Earnings | Company Estimated Earnings + Child Companies
 - Single page approach used.
 - Any solution demonstrate best practices where appropriate such as SOLID principles.
 
-Web application should deployed and link to the app is:
+Web application deployed and link to the app is:
 http://eliftech.azurewebsites.net/
 
 There are 2 branches -> master & FrontEnd.
