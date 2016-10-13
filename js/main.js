@@ -42,7 +42,7 @@ var AddOrEditCompany = function AddOrEditCompany(id, addOrEdit) {
         PricePlusSubPrice(addOrEdit === undefined ? data : id);
     });
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
+        //alert( "Request failed: " + textStatus );
     });
 };
 
@@ -64,7 +64,7 @@ var DeleteCompany = function DeleteCompany(id) {
         url: 'http://eliftechdataapi.azurewebsites.net/companies/' + id,
         contentType: 'application/json'
     }).fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
+        //alert( "Request failed: " + textStatus );
     });
 };
 
@@ -78,7 +78,7 @@ var DeleteAll = function DeleteAll() {
         url: 'http://eliftechdataapi.azurewebsites.net/companies/deleteall',
         contentType: 'application/json'
     }).fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
+        //alert( "Request failed: " + textStatus );
     });
 };
 
