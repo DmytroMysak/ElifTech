@@ -119,7 +119,7 @@ var CreateIF = function CreateIF(id, addOrEdit) {
     element.setAttribute("class", "form-inline");
     element.setAttribute("role", 'form');
 
-    document.getElementById(parentId == -1 ? "companies" : "nodes-" + id).appendChild(element);
+    document.getElementById(id == -1 ? "companies" : "nodes-" + id).appendChild(element);
 
     var node1 = document.createElement('label');
     node1.setAttribute("for", "name");
